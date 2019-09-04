@@ -5,7 +5,7 @@ This function is simple to use and if you are trying to go really fast (and know
 
 
 ### IAM Setup
-IAM setup requires a single policy and role. Within the IAM console, create a new policy and copy the JSON from the resources/iam.json file. This policy cam straight from the AWS documentation and is setup to allow Lambda to interact with CloudWatch. With the policy created, define a new role (I call mine 'LambdaCodePipelineExec') and attach this single policy. No other policies are needed on the role to allow this function to work.
+IAM setup requires a single policy and role. Within the IAM console, create a new policy and copy the JSON from the resources/iam.json file. This policy came straight from the AWS documentation and is setup to allow Lambda to interact with CloudWatch. With the policy created, define a new role (I call mine 'LambdaCodePipelineExec') and attach this single policy. No other policies are needed on the role to allow this function to work.
 
 
 ### Discord Setup
