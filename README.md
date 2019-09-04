@@ -3,6 +3,11 @@ A Node.js-based Lambda function that is used to make an HTTP POST call to a Disc
 
 This function is simple to use and if you are trying to go really fast (and know what you are doing) all you need to do is update the webhook url and the message you want to post to Discord and then create the Lambda function. If you're looking for some additional details, keep reading.
 
+
+### IAM Setup
+IAM setup requires a single policy and role. Within the IAM console, create a new policy and copy the JSON from the resources/iam.json file. This policy cam straight from the AWS documentation and is setup to allow Lambda to interact with CloudWatch. With the policy created, define a new role (I call mine 'LambdaCodePipelineExec') and attach this single policy. No other policies are needed on the role to allow this function to work.
+
+
 ### CodePipeline Setup
 There are a few ways to setup CodePipeline to use this function. The easiest way is to create a new Stage within a Pipeline named 'Discord.' If you aren't familiar with CodePipeline setup, there are a number of guides on the AWS site that are worth reading through. With your new stage setup, add an Action Group. I call mine 'Notify Discord' and select 'AWS Lambda' under the invoke section. After the expanded input form builds, select your lambda function under the function name section.
 
